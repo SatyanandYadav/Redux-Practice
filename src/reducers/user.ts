@@ -1,6 +1,7 @@
+import { IStoreUserState, IUserAction } from "../interface"
 import { FETCH_USER_FAILURE, FETCH_USER_REQUEST, FETCH_USER_SUCCESS, NEXT_PAGE, SEARCH_USER } from "../types/user"
 
-const initialState = {
+const initialState: IStoreUserState = {
     loading: false,
     users: [],
     error: '',
@@ -10,7 +11,7 @@ const initialState = {
     search: '',
 }
 
-export const userReducer = (state = initialState, action) => {
+export const userReducer = (state: IStoreUserState = initialState, action: IUserAction) => {
    switch(action.type) {
     case FETCH_USER_REQUEST: {
         return {

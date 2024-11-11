@@ -1,14 +1,17 @@
-import logo from './logo.svg';
 import { connect } from 'react-redux'
 import './App.css';
-import { decrement, increment } from './actions';
-import HooksCounter from './components/HooksCounter';
-import HookMultiply from './components/HookMultiply';
-import ShowItems from './components/ShowItems';
+import { decrement, increment } from './actions/index';
 import Users from './components/Users';
+import React from 'react';
 
-function App(props) {
-  // console.log(props);
+interface IAppProps {
+  counter: number;
+  increment: () => void;
+  decrement: () => void;
+}
+
+function App(props: IAppProps) {
+
   return (
     <div className="App">
       <div>Counter: {props.counter}</div>
@@ -27,11 +30,11 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   counter: state.count.counter
 })
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
 
   // console.log(dispatch);
   return ({

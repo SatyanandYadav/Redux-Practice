@@ -2,8 +2,10 @@ import { connect, useSelector } from "react-redux";
 import { fetchUsers, nextPage, searchUser } from "../../actions/user";
 import { useEffect, useState } from "react";
 import { createSelector } from "reselect";
+import React from "react";
 
-const Users = ({ user, fetchUsers, nextPage, searchUser }) => {
+
+const Users = ({ user, fetchUsers, nextPage, searchUser }: any) => {
 
   const [ inputVal, setInputVal] = useState('');
 
@@ -11,10 +13,7 @@ const Users = ({ user, fetchUsers, nextPage, searchUser }) => {
     fetchUsers(user.pageNumber, user.search, user.pageLimit);
   }, [user.pageNumber, user.search]);
 
-  console.log(Array.apply(null, { length: user.pagination}), user.pagination);
-
-  const user1 = useSelector((state) => state.user);
-  const user2 = useSelector((state) => state.user);
+  console.log(Array.apply(null, { length: user.pagination} as any), user.pagination);
 
   // console.log(user1.loading === user2.loading);
 

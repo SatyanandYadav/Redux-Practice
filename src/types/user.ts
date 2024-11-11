@@ -1,0 +1,5 @@
+export const FETCH_USER_REQUEST: string = 'FETCH_USER_REQUEST'
+export const FETCH_USER_SUCCESS: string = 'FETCH_USER_SUCCESS'
+export const FETCH_USER_FAILURE: string = 'FETCH_USER_FAILURE'
+export const NEXT_PAGE: string = 'NEXT_PAGE'
+export const SEARCH_USER: string= 'SEARCH_USER'

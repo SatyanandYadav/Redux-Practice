@@ -1,10 +1,11 @@
+import { IMultiAction, IStoreMultiState } from "../interface"
 import { MULTIPLY } from "../types/multiply"
 
-const initialState = { 
+const initialState: IStoreMultiState = { 
     number: 5
 }
 
-export const multiplyReducer = (state = initialState, action) => {
+export const multiplyReducer = (state: IStoreMultiState = initialState, action: IMultiAction) => {
     switch(action.type) {
         case MULTIPLY: {
             return { 
